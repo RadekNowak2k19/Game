@@ -98,7 +98,6 @@ const move = (position: number) => {
 	const playerPosition = playerElement.offsetLeft;
 	const newPosition = playerPosition + position * 10;
 	const { left, right } = boardElement.getBoundingClientRect();
-	// const maxLeft = newPosition - playerElement.getBoundingClientRect().width / 2;
 	const maxRight =
 		right - left - playerElement.getBoundingClientRect().width / 2;
 
@@ -159,9 +158,7 @@ const startGame = () => {
 	moveEnemyInterval = setInterval(moveEnemy, 50);
 	startGameElement.remove();
 };
-const startAgain = () => {
-	window.location.reload();
-};
+const startAgain = () => window.location.reload();
 const gameOver = () => {
 	window.removeEventListener("keydown", handleMovePlayer);
 	clearInterval(moveBulletInterval);
